@@ -464,7 +464,7 @@ class Document:
             # This results in incorrect results in case there is an <img>
             # buried within an <a> for example
             if not REGEXES["divToPElementsRe"].search(
-                str_(b"".join(map(tostring, list(elem))))
+                str_("".join(map(tounicode, list(elem))))
             ):
                 # log.debug("Altering %s to p" % (describe(elem)))
                 elem.tag = "p"
